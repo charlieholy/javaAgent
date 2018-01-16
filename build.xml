@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="jar">
+    <target name="init">
+        <delete dir="build"></delete>
+        <mkdir dir="build"/>
+        <mkdir dir="build/src"/>
+        <mkdir dir="build/classes"/>
+        <mkdir dir="build/dist"/>
+    </target>
+    <target name="compile" depends="init">
+        <javac destdir="build/classes" srcdir="src" encoding="GBK"></javac>
+    </target>
+    <target name="jar" depends="compile">
+        <jar destfile="build/dist/MyAgent.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Premain-Class" value="com.kk.Yes"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
