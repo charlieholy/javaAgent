@@ -12,6 +12,7 @@ public class Yes {
 	public static void premain(String agentOps, Instrumentation inst) {
 		System.out.println("=========premain·½·¨Ö´ÐÐ========");
 		System.out.println(agentOps);
+		inst.addTransformer(new Pt());
 	}
 
 	/**
